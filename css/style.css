@@ -241,14 +241,13 @@ main {
     }
 }
 
-/* Contact Section Email Link */
 #contact a[href^="mailto:"] {
-    text-decoration: none; /* Removes underline */
+    text-decoration: none !important; /* Ensures no underline */
     color: #333; /* Optional: Set the color to match the text */
 }
 
 #contact a[href^="mailto:"]:hover {
-    text-decoration: none; /* Optional: Add underline on hover for interactivity */
+    text-decoration: none !important; /* Ensures no underline */
     color: #007acc; /* Optional: Change color on hover */
 }
 
