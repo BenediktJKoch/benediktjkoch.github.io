@@ -240,3 +240,15 @@ main {
         text-align: center;
     }
 }
+
+/* Contact Section Email Link */
+#contact a[href^="mailto:"] {
+    text-decoration: none; /* Removes underline */
+    color: #333; /* Optional: Set the color to match the text */
+}
+
+#contact a[href^="mailto:"]:hover {
+    text-decoration: none; /* Optional: Add underline on hover for interactivity */
+    color: #007acc; /* Optional: Change color on hover */
+}
+
