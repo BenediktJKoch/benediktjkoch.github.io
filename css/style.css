@@ -52,7 +52,9 @@ header {
 
 .nav-links {
     list-style: none;
-    display: inline-flex;
+    display: flex;          /* was inline-flex */
+    flex-wrap: wrap;        /* allow wrapping on small screens */
+    justify-content: center;
     gap: 1.5rem;
     padding: 0;
     margin: 0 auto;
