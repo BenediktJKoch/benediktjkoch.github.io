@@ -55,9 +55,16 @@ header {
     display: flex;          /* was inline-flex */
     flex-wrap: wrap;        /* allow wrapping on small screens */
     justify-content: center;
-    gap: 1.5rem;
+    gap: 1rem;
     padding: 0;
     margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }
 
 .nav-links a {
