@@ -251,3 +251,22 @@ main {
     color: #007acc; /* Optional: Change color on hover */
 }
 
+.research-buttons {
+  margin-top: 5px;
+}
+
+.research-buttons .btn-small {
+  display: inline-block;
+  margin-right: 6px;
+  padding: 3px 8px;
+  font-size: 0.85em;
+  color: #fff;
+  background-color: #3b82f6; /* blue, you can pick another */
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.research-buttons .btn-small:hover {
+  background-color: #1e40af; /* darker blue on hover */
+}
