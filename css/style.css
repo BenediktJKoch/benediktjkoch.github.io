@@ -1,0 +1,253 @@
+/* General Styles */
+body {
+    font-family: 'Lora', serif;
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* Cory's gray background */
+    color: #333;
+    padding: 0 1rem;
+}
+
+h1, h2 {
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0;
+    font-weight: 600;
+}
+
+/* Header */
+header {
+    background-color: #ffffff;
+    padding: 1.5rem 0;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    text-align: center;
+}
+
+.header-container {
+    display: inline-block;
+}
+
+.header-container h1 {
+    margin-bottom: -1.5rem; /* Reduce space between name and subtitle */
+    font-size: 1.8rem;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600; /* Keep the h1 bold */
+}
+
+.header-container h1 .highlight {
+    color: #007acc; /* Use a distinctive color for "Ben" */
+    font-weight: 700; /* Add extra boldness for emphasis */
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #555; /* Lighter gray for subtitle */
+    margin-bottom: 1rem; /* Space below subtitle for navigation links */
+}
+
+.nav-links {
+    list-style: none;
+    display: inline-flex;
+    gap: 1.5rem;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #007acc;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Main Layout */
+main {
+    max-width: 900px;
+    margin: auto;
+    padding: 2rem 0;
+}
+
+/* About Section */
+.about-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 2rem;
+    background-color: #f8f9fa; /* Matches the page's gray background */
+    border-radius: 10px; /* Rounded edges */
+    box-shadow: none; /* Removes any shadow */
+    text-align: center; /* Center-align the header */
+}
+
+.about-container h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem; /* Space between title and content */
+}
+
+.about-content {
+    display: flex; /* Aligns image and text side by side */
+    gap: 2rem; /* Adds space between image and text */
+    align-items: center; /* Vertically align image and text */
+    text-align: left; /* Left-align the text */
+}
+
+.profile-pic {
+    flex-shrink: 0;
+    width: 250px; /* Match Cory's size */
+    height: 250px;
+    border-radius: 50%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-right: 1.5rem;
+    object-fit: cover; /* Ensures the image is cropped properly */
+}
+
+.about-text {
+    flex: 1;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.about-text p {
+    margin-bottom: 1rem;
+}
+
+/* About Icons */
+.about-icons {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.about-icons a {
+    font-size: 1.5rem;
+    color: #007acc; /* Use a distinct blue color for the icons */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.about-icons a:hover {
+    color: #005b99; /* Darker blue on hover */
+}
+
+/* Research Section */
+#research {
+    max-width: 900px;
+    margin: auto;
+    padding: 2rem;
+    font-family: 'Lora', serif;
+}
+
+#research h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+    text-align: center;
+}
+
+.research-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.research-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.research-list li {
+    margin-bottom: 1.5rem; /* Spacing between research items */
+    line-height: 1.8;
+}
+
+.research-list li a {
+    color: #000; /* Change link color to black */
+    text-decoration: none; /* Remove underline by default */
+}
+
+.research-list li a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+.research-section h3:first-of-type + .research-list li a {
+    text-decoration: underline; /* Keep underline for Publications links */
+}
+
+.research-authors {
+    font-size: 0.9rem; /* Smaller font size for author names */
+    color: #555; /* Lighter color for differentiation */
+    line-height: 1.5; /* Slightly reduce line spacing */
+}
+
+/* Teaching Section */
+#teaching {
+    max-width: 900px;
+    margin: auto;
+    padding: 2rem;
+    font-family: 'Lora', serif; /* Ensure the same font as publications */
+}
+
+#teaching h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+    text-align: center;
+}
+
+.teaching-list {
+    margin-bottom: 2rem;
+}
+
+.teaching-list h3 {
+    font-size: 1.5rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.teaching-list ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin: 0;
+}
+
+.teaching-list ul li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .profile-pic {
+        margin: 0 auto 1rem;
+    }
+    .about-text {
+        text-align: center;
+    }
+}
+
+#contact a[href^="mailto:"] {
+    text-decoration: none !important; /* Ensures no underline */
+    color: #333; /* Optional: Set the color to match the text */
+}
+
+#contact a[href^="mailto:"]:hover {
+    text-decoration: none !important; /* Ensures no underline */
+    color: #007acc; /* Optional: Change color on hover */
+}
+
