@@ -312,4 +312,46 @@ main {
   background-color: #1e40af;
 }
 
+/* Smoothly shrink the header on scroll */
+header {
+  transition: padding .25s ease, box-shadow .25s ease, background-color .25s ease;
+}
+
+/* default (at top) */
+header .header-container h1 { transition: font-size .25s ease, letter-spacing .25s ease; }
+.subtitle { transition: opacity .25s ease, max-height .25s ease; }
+.nav-links { transition: gap .25s ease; }
+
+/* when scrolled */
+header.scrolled {
+  padding: 0.6rem 0;             /* was 1.5rem 0 */
+  box-shadow: 0 2px 10px rgba(0,0,0,.08);
+  background-color: #ffffffcc;   /* slight transparency */
+  backdrop-filter: blur(6px);    /* nice glass effect on modern browsers */
+}
+
+header.scrolled .header-container h1 {
+  font-size: 1.3rem;             /* shrink the name */
+  letter-spacing: .2px;
+}
+
+header.scrolled .subtitle {
+  opacity: 0;                     /* fade subtitle out */
+  max-height: 0;                  /* collapse space */
+  overflow: hidden;
+}
+
+header.scrolled .nav-links {
+  gap: 0.75rem;                   /* tighter nav spacing */
+}
+
+/* Optional: tighter on small screens */
+@media (max-width: 600px) {
+  header.scrolled {
+    padding: 0.45rem 0;
+  }
+  header.scrolled .header-container h1 {
+    font-size: 1.15rem;
+  }
+}
 
