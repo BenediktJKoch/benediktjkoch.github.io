@@ -255,28 +255,28 @@ main {
     color: #333;
 }
 
-/* Conferences Section */
-#conferences {
+/* News Section */
+#news {
     max-width: 900px;
     margin: auto;
     padding: 2rem;
     font-family: 'Lora', serif;
 }
 
-#conferences h2 {
+#news h2 {
     font-size: 2rem;
     margin-bottom: 1.5rem;
     color: #333;
     text-align: left; /* Left align */
 }
 
-.conference-list {
+.news-list {
     margin-bottom: 2rem;
     list-style: disc;
     padding-left: 1.5rem;
 }
 
-.conference-list li {
+.news-list li {
     margin-bottom: 0.5rem;
     line-height: 1.5;
     font-size: 1rem;
@@ -307,13 +307,13 @@ main {
     color: #007acc;
 }
 
-/* Buttons for Research/Conferences */
-.research-buttons, .conference-buttons {
+/* Buttons for Research/News */
+.research-buttons, .news-buttons {
   margin-top: 5px;
 }
 
 .research-buttons .btn-small,
-.conference-buttons .btn-small {
+.news-buttons .btn-small {
   display: inline-block;
   margin-right: 6px;
   padding: 3px 8px;
@@ -326,7 +326,7 @@ main {
 }
 
 .research-buttons .btn-small:hover,
-.conference-buttons .btn-small:hover {
+.news-buttons .btn-small:hover {
   background-color: #1e40af;
 }
 
