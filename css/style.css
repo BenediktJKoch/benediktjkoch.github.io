@@ -374,4 +374,20 @@ main {
   #site-header.scrolled .header-container h1{ font-size: 1rem; }
 }
 
+/* Small section image break */
+.section-image {
+  max-width: 900px;
+  margin: 0rem auto 2rem auto; 
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.section-image-img {
+  width: 100%;
+  max-width: 420px;   /* ↓ smaller, subtle */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+}
+
 
