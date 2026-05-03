@@ -6,17 +6,33 @@
   <meta name="google-site-verification" content="usa2V0AJc2ot771baLn_aSeKVaBjeyJ4enJZN_eclR8" />
   <meta name="google-site-verification" content="dwEhfYJj1NN6eUqKakrEaz-FT_TfgxdhSZmjdRTIIrU" />
   <title>Benedikt J. Koch</title>
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
+    window.addEventListener('pageshow', () => {
+      const [navigation] = performance.getEntriesByType('navigation');
+      const isReload = navigation
+        ? navigation.type === 'reload'
+        : performance.navigation && performance.navigation.type === 1;
+
+      if (!isReload) return;
+      if (window.location.hash) {
+        history.replaceState(null, document.title, window.location.pathname + window.location.search);
+      }
+      window.scrollTo(0, 0);
+    });
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
   <link rel="icon" type="image/png" href="profile_2025.png" />
 </head>
 <body>
   <div class="container">
-    <!-- Only ONE header (this is the visible one) -->
     <header id="site-header">
       <div class="header-container">
-        <h1><span class="highlight">Ben</span>edikt J. Koch</h1>
+        <h1><span class="name-highlight">Ben</span><span class="given-name">edikt J.</span> <span class="family-name">Koch</span></h1>
         <p class="subtitle">Harvard University / Department of Statistics</p>
         <nav>
           <ul class="nav-links">
@@ -41,29 +57,54 @@
                     <img src="profile_2025.png" alt="Your Profile Picture" class="profile-pic">
                     <div class="about-text">
                         <p>
-                            I am a Ph.D. candidate in Statistics at Harvard University, where I am advised by 
-                            <a href="https://imai.fas.harvard.edu/" target="_blank">Kosuke Imai</a>. 
-                            My research centers on Causal Inference in the context of policy evaluation and learning, with emphasis on statistical and algorithmic decision-making. 
-                            My goal is to extract statistically reliable information from data to help decision makers make better choices.
+                            I am a Ph.D. candidate in Statistics at Harvard University, advised by
+                            <a href="https://imai.fas.harvard.edu/" target="_blank">Kosuke Imai</a>.
+                            My research is in causal inference, with a focus on counterfactual decision theory.
+                            I study decisions evaluated not only by their outcomes, but also by what
+                            would have happened under alternative decisions. This allows me to ask whether a decision
+                            made a difference, or whether the same outcome would have occurred anyway.
+
                         </p>
                         <p>
-                            In the summer of 2025, I was a research intern in the Experimentation & Causal Inference group at 
-                            <a href="https://research.netflix.com/research-area/experimentation-and-causal-inference" target="_blank">Netflix</a>.
+                            I have an ongoing research collaboration with Netflix on experimentation,
+                            treatment-effect extrapolation, and semiparametric policy learning with
+                            high-dimensional model embeddings. In summer 2025, I interned in the
+                            <a href="https://research.netflix.com/research-area/experimentation-and-causal-inference" target="_blank">Experimentation &amp; Causal Inference</a>
+                            group. In summer 2026, I will return as an intern in the
+                            <a href="https://research.netflix.com/research-area/machine-learning" target="_blank">Machine Learning and Inference Research</a>
+                            group.
                         </p>
                         <p>
-                            Before joining Harvard, I earned degrees from the University of Oxford (MSc in Statistical Science), ETH Zurich (MSc in Applied Mathematics), and the University of Vienna (BSc in Mathematics). 
-                            I also worked full-time as a Data Scientist at 
-                            <a href="https://www.quantco.com/" target="_blank">QuantCo</a>, a consulting firm specializing in Statistical Machine Learning.
-                            Prior to my academic journey, I served in the Austrian Armed Forces, where I underwent training to become an army officer.
+                            Before joining Harvard, I earned degrees from the University of Oxford
+                            (MSc in Statistical Science), ETH Zurich (MSc in Applied Mathematics), and the
+                            University of Vienna (BSc in Mathematics). I also worked full-time as a Data Scientist at
+                            <a href="https://www.quantco.com/" target="_blank">QuantCo</a>, focusing on statistical
+                            machine learning and pricing.
+                            Prior to my academic journey, I served in the Austrian Armed Forces, where I trained to become an army officer.
                         </p>
                     </div>
                 </div>
-                <!-- Social Icons -->
-                <div class="about-icons">
-                    <a href="mailto:benedikt_koch@g.harvard.edu" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                    <a href="https://www.linkedin.com/in/benedikt-j-koch/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://scholar.google.com/citations?user=TRMPDUcAAAAJ&hl=en" target="_blank" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-                    <a href="https://github.com/BenediktJKoch" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <div class="about-icons" aria-label="Academic profiles and contact links">
+                    <a href="mailto:benedikt_koch@g.harvard.edu" target="_blank" aria-label="Email">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M2.4 5.5A2.4 2.4 0 0 1 4.8 3.1h14.4a2.4 2.4 0 0 1 2.4 2.4v13a2.4 2.4 0 0 1-2.4 2.4H4.8a2.4 2.4 0 0 1-2.4-2.4v-13Zm2.2.2 7.4 5.5 7.4-5.5H4.6Zm14.8 12.8V8.6l-6.8 5.1a1 1 0 0 1-1.2 0L4.6 8.6v9.9h14.8Z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/benedikt-j-koch/" target="_blank" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M20.5 3H3.5A.5.5 0 0 0 3 3.5v17a.5.5 0 0 0 .5.5h17a.5.5 0 0 0 .5-.5v-17a.5.5 0 0 0-.5-.5ZM8.3 18.2H5.7V9.8h2.6v8.4ZM7 8.7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm11.2 9.5h-2.6v-4.1c0-1-.3-1.7-1.3-1.7-.7 0-1.1.5-1.3 1-.1.2-.1.4-.1.6v4.2h-2.6V9.8h2.6V11c.4-.6 1.1-1.4 2.5-1.4 1.8 0 2.8 1.2 2.8 3.6v5Z" />
+                        </svg>
+                    </a>
+                    <a href="https://scholar.google.com/citations?user=TRMPDUcAAAAJ&hl=en" target="_blank" aria-label="Google Scholar">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 3 1.8 8.5 12 14l8.3-4.5V15h1.9V8.5L12 3Zm-6 9.5v3.2c0 2 2.7 3.7 6 3.7s6-1.7 6-3.7v-3.2L12 15.7l-6-3.2Z" />
+                        </svg>
+                    </a>
+                    <a href="https://github.com/BenediktJKoch" target="_blank" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 2.2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.9c-2.9.6-3.5-1.2-3.5-1.2-.5-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 0 1.6 1.1 1.6 1.1.9 1.5 2.3 1.1 2.9.8.1-.7.4-1.1.7-1.4-2.3-.3-4.7-1.2-4.7-5a3.9 3.9 0 0 1 1-2.7c-.1-.3-.4-1.4.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5.1 0c1.9-1.3 2.8-1 2.8-1 .5 1.3.2 2.4.1 2.7a3.9 3.9 0 0 1 1 2.7c0 3.9-2.4 4.8-4.7 5 .4.3.7.9.7 1.8v2.8c0 .3.2.6.7.5A10 10 0 0 0 12 2.2Z" />
+                        </svg>
+                    </a>
                 </div>
             </div>
         </section>
@@ -72,7 +113,7 @@
         <section id="research">
             <h2>Research</h2>
             <p>
-                For an always up-to-date list of publications, see my 
+                For an always up-to-date list of publications, see my
                 <a href="https://scholar.google.com/citations?user=TRMPDUcAAAAJ&hl=en" target="_blank">Google Scholar page</a>.
             </p>
             <!-- Publications Section -->
@@ -81,7 +122,7 @@
                 <ul class="research-list">
                     <li>
                         <a href="https://arxiv.org/abs/2211.15628" target="_blank">
-                            <strong>Ergodic robust maximization of asymptotic growth under stochastic volatility</strong>
+                            <strong>Ergodic robust maximization of asymptotic growth with stochastic factor processes</strong>
                         </a> (2022). <em>Finance and Stochastics</em>, forthcoming.<br>
                         <span class="research-authors">D. Itkin, <strong>B. Koch</strong>, M. Larsson, and J. Teichmann.</span>
                         <div class="research-buttons">
@@ -95,8 +136,18 @@
                 <h3>Working Papers</h3>
                 <ul class="research-list">
                     <li>
+                        <a href="" target="_blank">
+                            <strong>An Axiomatic Foundation for Decisions with Counterfactual Utility</strong>
+                        </a> (2026).<br>
+                        <span class="research-authors"><strong>B. Koch</strong>, K. Imai and  T. Strzalecki </span>
+                            <div class="research-buttons">
+                        </div>
+                    </li>
+                </ul>
+                <ul class="research-list">
+                    <li>
                         <a href="http://arxiv.org/abs/2505.08908" target="_blank">
-                            <strong>Statistical Decision Theory with Counterfactual Loss</strong> 
+                            <strong>Statistical Decision Theory with Counterfactual Loss</strong>
                         </a> (2025).<br>
                         <span class="research-authors"><strong>B. Koch</strong>, and K. Imai.</span>
                             <div class="research-buttons">
@@ -109,14 +160,32 @@
         </section>
 
         <section id="news">
-            <h2>News</h2>
-            <ul class="news-list">
-                <li>September 04, 2025. Talk: Harvard Statistics Department, “Statistical Decision Theory with Counterfactual Loss” </li>
-                <li>June 02 - August 25, 2025. Career: Netflix internship</li>
-                <li>May 15, 2025. Talk: ACIC, Detroit, Session Talk, “Statistical Decision Theory with Counterfactual Loss” </li>
-                <li>May 13, 2025. Paper: <a href="http://arxiv.org/abs/2505.08908" target="_blank"> Statistical Decision Theory with Counterfactual Loss</a> is now available on arXiv</li>
-            </ul>
-        </section>
+    <section id="news">
+    <h2>News</h2>
+        <ul class="news-list">
+            <li><strong>June-August 2026.</strong> Internship: Netflix Machine Learning and Inference Research group</li>
+
+            <li><strong>May 2026.</strong> Organized Panel ACIC 2026, Salt Lake City, &ldquo;Controversies about Counterfactual Utilities&rdquo;; Talk:  &ldquo;An Axiomatic Foundation for Decisions with Counterfactual Utility&rdquo;</li>
+
+            <li><strong>April 2026.</strong> Talk: Netflix Machine Learning and Inference Research, &ldquo;Low-Rank CATE Estimation for New High-Dimensional Treatments&rdquo;</li>
+
+            <li><strong>April 2026.</strong> Talk: Imai Research Group, &ldquo;Counterfactual Decision Theory&rdquo;</li>
+
+            <li><strong>March 2026.</strong> Talk: Harvard Statistics and Applied Mathematics Seminar, &ldquo;Counterfactual Decision Theory&rdquo;</li>
+
+            <li><strong>September 2025-May 2026.</strong> Research Contractor: Netflix Machine Learning and Inference Research group</li>
+
+            <li><strong>September 2025.</strong> Talk: Harvard Statistics Seminar, &ldquo;Statistical Decision Theory with Counterfactual Loss&rdquo;</li>
+
+            <li><strong>June-August 2025.</strong> Internship: Netflix Experimentation &amp; Causal Inference group</li>
+
+            <li><strong>May 2025.</strong> Organized Panel ACIC 2025, Detroit, &ldquo;Policy Learning and Evaluation under Arbitrary Dependency&rdquo;; Talk: &ldquo;Statistical Decision Theory with Counterfactual Loss&rdquo;</li>
+
+            <li><strong>May 2025.</strong> Paper: <a href="http://arxiv.org/abs/2505.08908" target="_blank">&ldquo;Statistical Decision Theory with Counterfactual Loss&rdquo;</a> is now available on arXiv</li>
+        </ul>
+    </section>
+
+
 
 
 
@@ -139,12 +208,6 @@
             </div>
         </section>
 
-        <section class="section-image">
-            <img src="profile_ski.JPG"
-                alt="Teaching and research visual"
-                class="section-image-img">
-        </section>
-
         <!-- Contact Section -->
         <section id="contact">
             <h2>Contact</h2>
@@ -156,38 +219,6 @@
             </p>
         </section>
     </main>
-  <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const header = document.getElementById('site-header');
-  const about = document.getElementById('about');
-  if (!header || !about) return;
-
-  let headerH = header.offsetHeight;
-  let aboutTop = about.getBoundingClientRect().top + window.scrollY; // absolute Y of #about
-
-  function recalc() {
-    headerH = header.offsetHeight;
-    aboutTop = about.getBoundingClientRect().top + window.scrollY;
-    apply();
-  }
-
-  function apply() {
-    // show header while we're above the About title minus header height
-    const shouldHide = (window.scrollY + headerH) >= aboutTop;
-    header.classList.toggle('pushed', shouldHide);
-  }
-
-  // init + listeners
-  apply();
-  window.addEventListener('scroll', apply, { passive: true });
-  window.addEventListener('resize', () => { recalc(); }, { passive: true });
-
-  // If web fonts change header height after load, recalc once more
-  setTimeout(recalc, 300);
-});
-</script>
-
-
 </div>
 </body>
 </html>
