@@ -221,6 +221,7 @@ strong {
 #research,
 #news,
 #teaching,
+#notes,
 #contact {
   width: 100%;
   max-width: var(--measure);
@@ -277,18 +278,21 @@ strong {
 }
 
 .research-list,
+.notes-list,
 .news-list,
 .teaching-list ul {
   margin: 0;
   padding-left: 1.2rem;
 }
 
-.research-list {
+.research-list,
+.notes-list {
   padding-left: 0.9rem;
   list-style: none;
 }
 
-.research-list li {
+.research-list li,
+.notes-list li {
   position: relative;
   margin-bottom: 0.85rem;
   color: var(--text);
@@ -296,7 +300,8 @@ strong {
   line-height: 1.5;
 }
 
-.research-list li::before {
+.research-list li::before,
+.notes-list li::before {
   content: "";
   position: absolute;
   top: 0.63em;
@@ -307,11 +312,13 @@ strong {
   background: var(--accent);
 }
 
-.research-list li a {
+.research-list li a,
+.notes-list li a {
   color: var(--strong);
 }
 
-.research-authors {
+.research-authors,
+.notes-description {
   display: inline-block;
   color: var(--muted);
   font-size: 0.9rem;
@@ -319,6 +326,7 @@ strong {
 }
 
 .research-buttons,
+.notes-buttons,
 .news-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -327,6 +335,7 @@ strong {
 }
 
 .research-buttons .btn-small,
+.notes-buttons .btn-small,
 .news-buttons .btn-small {
   display: inline-flex;
   min-height: 1.55rem;
@@ -344,6 +353,8 @@ strong {
 
 .research-buttons .btn-small:hover,
 .research-buttons .btn-small:focus-visible,
+.notes-buttons .btn-small:hover,
+.notes-buttons .btn-small:focus-visible,
 .news-buttons .btn-small:hover,
 .news-buttons .btn-small:focus-visible {
   color: var(--page);
@@ -480,6 +491,7 @@ strong {
 
   .about-text,
   #research > p,
+  .notes-list,
   .news-list,
   .teaching-list ul,
   #contact p {
