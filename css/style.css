@@ -373,12 +373,6 @@ strong {
   color: var(--text);
 }
 
-.news-hint {
-  margin: -0.35rem 0 0.65rem;
-  color: var(--muted);
-  font-size: 0.85rem;
-}
-
 .news-scroll {
   max-height: 26rem;
   overflow-y: auto;
