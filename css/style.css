@@ -40,6 +40,11 @@ a:focus-visible {
   text-decoration: underline;
 }
 
+:focus-visible {
+  outline: 2px solid var(--accent-dark);
+  outline-offset: 3px;
+}
+
 .container {
   min-height: 100vh;
 }
@@ -298,6 +303,7 @@ strong {
   color: var(--text);
   font-size: 0.95rem;
   line-height: 1.5;
+  overflow-wrap: anywhere;
 }
 
 .research-list li::before,
@@ -367,11 +373,34 @@ strong {
   color: var(--text);
 }
 
+.news-hint {
+  margin: -0.35rem 0 0.65rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.news-scroll {
+  max-height: 26rem;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+  scrollbar-color: var(--muted) var(--soft);
+  padding: 0.75rem 1rem 0.3rem 0.25rem;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.news-list li {
+  margin-bottom: 0.8rem;
+}
+
 .news-list li,
 .teaching-list li {
-  margin-bottom: 0.45rem;
   font-size: 0.95rem;
   line-height: 1.48;
+}
+
+.teaching-list li {
+  margin-bottom: 0.45rem;
 }
 
 .teaching-list {
@@ -442,23 +471,37 @@ strong {
   .about-icons {
     justify-content: center;
   }
+
+  .nav-links a,
+  .about-icons a {
+    display: inline-flex;
+    min-height: 2.75rem;
+    min-width: 2.75rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .research-buttons .btn-small,
+  .notes-buttons .btn-small {
+    min-height: 2.75rem;
+    padding-right: 0.7rem;
+    padding-left: 0.7rem;
+  }
+
+  .news-scroll {
+    max-height: min(26rem, 65vh);
+    max-height: min(26rem, 65svh);
+  }
 }
 
 @media (max-width: 520px) {
-  .container {
-    width: min(100%, 390px);
-    max-width: 390px;
-    margin: 0 auto;
-    overflow: hidden;
-  }
-
   #site-header {
     padding-right: 1rem;
     padding-left: 1rem;
   }
 
   main {
-    padding-right: 2rem;
+    padding-right: 1.25rem;
     padding-left: 1.25rem;
   }
 
@@ -473,7 +516,6 @@ strong {
   }
 
   h2 {
-    align-items: flex-start;
     gap: 0.55rem;
     font-size: 1.3rem;
   }
@@ -484,7 +526,6 @@ strong {
   }
 
   section {
-    max-width: 19rem;
     margin-right: auto;
     margin-left: auto;
   }
@@ -495,8 +536,13 @@ strong {
   .news-list,
   .teaching-list ul,
   #contact p {
-    max-width: 19rem;
     overflow-wrap: anywhere;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
 
