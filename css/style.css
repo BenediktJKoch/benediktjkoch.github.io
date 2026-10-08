@@ -97,8 +97,7 @@ main {
 }
 
 .name-highlight {
-  color: inherit;
-  background: linear-gradient(transparent 58%, #e4edf3 58%, #e4edf3 93%, transparent 93%);
+  color: #526f82;
   font-weight: 400;
 }
 
@@ -348,6 +347,11 @@ strong {
 
 .paper-meta {
   margin-top: 0.1rem;
+}
+
+.paper-journal {
+  margin-top: 0.3rem;
+  color: #526f82;
 }
 
 .research-buttons,
